@@ -1,0 +1,31 @@
+#include <iostream>
+#include<vector>
+#include<algorithm>
+#include <numeric>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    vector<int> a(n);
+    
+    for(int i=0;i<n;i++)
+    cin >> a[i];
+    
+    sort(a.begin(),a.end());
+    
+    int d=a[0];
+    int f=0;
+    for(int i=0;i<n;i++)
+    {
+       if(a[i]%d!=0)
+       {
+          f++;
+          break;
+       }
+    }
+    if(f) cout << "-1" << endl;
+    else cout << d << endl;
+    }
